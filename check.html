@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layers Shift Checklist</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.12);
+      --text: #f5f7ff;
+      --muted: #aab3d1;
+      --primary: #6ee7ff;
+      --accent: #8b5cf6;
+      --success: #22c55e;
+      --danger: #ef4444;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Cairo", system-ui, sans-serif;
+      background: radial-gradient(circle at top, #17203d, #0b1020 60%);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .header {
+      background: var(--card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      border-radius: 28px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .progress-wrap {
+      margin-bottom: 18px;
+    }
+
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 18px;
+      background: rgba(255,255,255,.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width .35s ease;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .stat h3 {
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .stat p {
+      margin: 10px 0 0;
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .search {
+      flex: 1;
+      min-width: 220px;
+      padding: 14px 18px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      outline: none;
+    }
+
+    .btn {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding: 12px 18px;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: .2s ease;
+      font-weight: 700;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.12);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #0b1020;
+      border: none;
+    }
+
+    .btn.danger {
+      background: rgba(239,68,68,.15);
+      color: #fecaca;
+      border-color: rgba(239,68,68,.25);
+    }
+
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      margin-bottom: 18px;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+
+    .section-header {
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .section-count {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .chevron {
+      transition: transform .25s ease;
+    }
+
+    .section.collapsed .chevron {
+      transform: rotate(-90deg);
+    }
+
+    .tasks {
+      padding: 0 22px 20px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .section.collapsed .tasks {
+      display: none;
+    }
+
+    .task {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 14px 16px;
+      transition: .2s ease;
+    }
+
+    .task:hover {
+      background: rgba(255,255,255,.08);
+    }
+
+    .task input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      accent-color: var(--success);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .task label {
+      flex: 1;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .task.completed label {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+
+    .badge {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 16px; }
+      h1 { font-size: 28px; }
+      .section-title { font-size: 18px; }
+      .controls { flex-direction: column; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Layers Shift — Product Checklist</h1>
+      <div class="subtitle">اتبع الخطوات بالترتيب، وكل ما تخلص خطوة علّم عليها ✔</div>
+
+      <div class="progress-wrap">
+        <div class="progress-info">
+          <span>التقدم الكلي</span>
+          <span id="progressText">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><h3>إجمالي المهام</h3><p id="totalTasks">0</p></div>
+        <div class="stat"><h3>تم إنجازها</h3><p id="completedTasks">0</p></div>
+        <div class="stat"><h3>متبقية</h3><p id="remainingTasks">0</p></div>
+        <div class="stat"><h3>النسبة</h3><p id="percent">0%</p></div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="search" class="search" placeholder="ابحث عن مهمة..." />
+      <button class="btn primary" id="expandAll">فتح الكل</button>
+      <button class="btn" id="collapseAll">إغلاق الكل</button>
+      <button class="btn" id="showAll">الكل</button>
+      <button class="btn" id="showCompleted">المنجزة</button>
+      <button class="btn" id="showPending">المتبقية</button>
+      <button class="btn danger" id="resetBtn">إعادة ضبط</button>
+    </div>
+
+    <div id="checklist"></div>
+  </div>
+
+  <script>
+    const data = [
+      {
+        title: "🟢 Product Foundation",
+        tasks: [
+          "تحديد Vision للمنتج",
+          "تحديد Target Audience",
+          "تحديد Pricing Plans",
+          "تحديد License System",
+          "كتابة Product Requirements",
+          "تحديد MVP",
+          "تحديد Roadmap"
+        ]
+      },
+      {
+        title: "🎨 UI / UX",
+        tasks: [
+          "Design System",
+          "Color Palette",
+          "Typography",
+          "Icons",
+          "Responsive Design",
+          "Dark Mode",
+          "Light Mode",
+          "Arabic",
+          "English"
+        ]
+      },
+      {
+        title: "🏗 Core Application",
+        tasks: [
+          "New Project",
+          "Open Project",
+          "Save Project",
+          "Auto Save",
+          "Excel Import",
+          "Data Binding",
+          "Drag & Drop Mapping",
+          "Live Preview",
+          "Freeform Composer",
+          "PDF Export",
+          "Batch Export"
+        ]
+      },
+      {
+        title: "🖨 Print Automation",
+        tasks: [
+          "Variable Text",
+          "Variable Images",
+          "QR Code",
+          "Barcode",
+          "Conditional Layers",
+          "Auto Fit",
+          "Text Overflow Handling"
+        ]
+      },
+      {
+        title: "🔒 Security & Licensing",
+        tasks: [
+          "Activation System",
+          "Device Lock",
+          "Offline License",
+          "Online Verification",
+          "Update Checker"
+        ]
+      },
+      {
+        title: "🧪 Testing",
+        tasks: [
+          "Windows Testing",
+          "macOS Testing",
+          "Arabic Testing",
+          "English Testing",
+          "Large File Testing",
+          "Export Testing"
+        ]
+      },
+      {
+        title: "🚀 Release",
+        tasks: [
+          "Version Number",
+          "Release Build",
+          "Backup",
+          "Upload Website",
+          "Upload Downloads",
+          "Publish",
+          "Announce Release"
+        ]
+      }
+    ];
+
+    const STORAGE_KEY = "layers-shift-checklist";
+    let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+
+    const checklist = document.getElementById("checklist");
+
+    function save() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    function render() {
+      checklist.innerHTML = "";
+
+      data.forEach((section, sIndex) => {
+        const sectionEl = document.createElement("div");
+        sectionEl.className = "section";
+
+        const completedInSection = section.tasks.filter((_, tIndex) =>
+          state[`${sIndex}-${tIndex}`]
+        ).length;
+
+        sectionEl.innerHTML = `
+          <div class="section-header">
+            <div>
+              <div class="section-title">
+                ${section.title}
+              </div>
+              <div class="section-count">
+                ${completedInSection} / ${section.tasks.length}
+              </div>
+            </div>
+            <div class="chevron">▼</div>
+          </div>
+          <div class="tasks"></div>
+        `;
+
+        const tasksEl = sectionEl.querySelector(".tasks");
+
+        section.tasks.forEach((task, tIndex) => {
+          const id = `${sIndex}-${tIndex}`;
+          const checked = state[id] || false;
+
+          const taskEl = document.createElement("div");
+          taskEl.className = `task ${checked ? "completed" : ""}`;
+          taskEl.innerHTML = `
+            <input type="checkbox" id="${id}" ${checked ? "checked" : ""}>
+            <label for="${id}">${task}</label>
+            <span class="badge">${checked ? "تم" : "مطلوب"}</span>
+          `;
+
+          const checkbox = taskEl.querySelector("input");
+          checkbox.addEventListener("change", () => {
+            state[id] = checkbox.checked;
+            save();
+            render();
+            updateStats();
+          });
+
+          tasksEl.appendChild(taskEl);
+        });
+
+        sectionEl.querySelector(".section-header").addEventListener("click", () => {
+          sectionEl.classList.toggle("collapsed");
+        });
+
+        checklist.appendChild(sectionEl);
+      });
+
+      applySearch();
+      updateStats();
+    }
+
+    function updateStats() {
+      const total = data.reduce((sum, s) => sum + s.tasks.length, 0);
+      const completed = Object.values(state).filter(Boolean).length;
+      const remaining = total - completed;
+      const percent = Math.round((completed / total) * 100) || 0;
+
+      document.getElementById("totalTasks").textContent = total;
+      document.getElementById("completedTasks").textContent = completed;
+      document.getElementById("remainingTasks").textContent = remaining;
+      document.getElementById("percent").textContent = percent + "%";
+      document.getElementById("progressText").textContent = percent + "%";
+      document.getElementById("progressFill").style.width = percent + "%";
+    }
+
+    function applySearch() {
+      const q = document.getElementById("search").value.toLowerCase();
+
+      document.querySelectorAll(".task").forEach(task => {
+        const text = task.querySelector("label").textContent.toLowerCase();
+        task.style.display = text.includes(q) ? "flex" : "none";
+      });
+    }
+
+    document.getElementById("search").addEventListener("input", applySearch);
+
+    document.getElementById("expandAll").addEventListener("click", () => {
+      document.querySelectorAll(".section").forEach(s => s.classList.remove("collapsed"));
+    });
+
+    document.getElementById("collapseAll").addEventListener("click", () => {
+      document.querySelectorAll(".section").forEach(s => s.classList.add("collapsed"));
+    });
+
+    function filterTasks(mode) {
+      document.querySelectorAll(".task").forEach(task => {
+        const checked = task.querySelector("input").checked;
+
+        if (mode === "all") task.style.display = "flex";
+        if (mode === "completed") task.style.display = checked ? "flex" : "none";
+        if (mode === "pending") task.style.display = !checked ? "flex" : "none";
+      });
+    }
+
+    document.getElementById("showAll").onclick = () => filterTasks("all");
+    document.getElementById("showCompleted").onclick = () => filterTasks("completed");
+    document.getElementById("showPending").onclick = () => filterTasks("pending");
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      if (confirm("هل تريد إعادة ضبط كل العلامات؟")) {
+        state = {};
+        save();
+        render();
+      }
+    });
+
+    render();
+  </script>
+</body>
+</html>

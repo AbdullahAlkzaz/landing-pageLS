@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Layers Shift | Professional Variable Data Printing Software</title>
+    <meta name="description" content="Layers Shift is a professional desktop application that turns Excel data into thousands of print-ready certificates, IDs, badges, labels, and production files in minutes.">
+    <meta name="keywords" content="variable data printing software, Excel to PDF, batch print automation, certificate software, ID card software, print shop automation">
+    <meta property="og:title" content="Layers Shift | Variable Data Printing Software">
+    <meta property="og:description" content="Import Excel, map columns to design layers, preview instantly, and export high-resolution print-ready files.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#06070A">
+    <link rel="preload" href="styles/style.css" as="style">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <script>
+      window.tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                ink: "#06070A",
+                panel: "#111318",
+                accent: "#4F8CFF",
+                violet: "#7B5CFF",
+                cyan: "#00E5FF",
+                muted: "#9CA3AF"
+              },
+              fontFamily: {
+                inter: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+                cairo: ["Cairo", "Segoe UI", "Tahoma", "Arial", "sans-serif"]
+              },
+              boxShadow: {
+                premium: "0 24px 80px rgba(0,0,0,.45)",
+                glow: "0 20px 70px rgba(79,140,255,.28)"
+              }
+            }
+          }
+        }
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen overflow-x-hidden bg-ink text-white antialiased">
+    <div class="cursor-glow pointer-events-none fixed z-[100]" aria-hidden="true"></div>
+
+    <header class="site-header fixed left-1/2 top-[18px] z-50 flex w-[calc(100%-32px)] max-w-[1180px] -translate-x-1/2 items-center gap-4 rounded-full border border-white/10 bg-ink/85 px-3 py-2 shadow-premium backdrop-blur-2xl" data-reveal>
+      <a class="brand inline-flex items-center gap-2.5 font-black" href="#top" aria-label="Layers Shift home">
+        <span class="brand-mark grid h-[34px] w-[34px] place-items-center rounded-lg bg-gradient-to-br from-accent to-cyan text-xs font-black shadow-glow">LS</span>
+        <span>Layers Shift</span>
+      </a>
+      <button class="nav-toggle bg-transparent" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav flex min-w-0 flex-1 justify-center gap-6" aria-label="Primary navigation">
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#workflow" data-i18n="nav.workflow">Workflow</a>
+        <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav-actions flex items-center gap-3">
+        <div class="language-switcher inline-flex min-h-[42px] items-center gap-2 rounded-full border border-white/10 bg-white/[.07] px-3 text-sm" role="group" aria-label="Language switcher">
+          <span class="language-icon" aria-hidden="true">🌐</span>
+          <button class="language-option is-active" type="button" data-language-option="en" aria-pressed="true">EN</button>
+          <span aria-hidden="true">|</span>
+          <button class="language-option" type="button" data-language-option="ar" aria-pressed="false">العربية</button>
+        </div>
+        <a class="button ghost" href="https://wa.me/201275107815?text=Hello%20Layers%20Shift%2C%20I%20want%20to%20ask%20about%20the%20software." target="_blank" rel="noreferrer" data-whatsapp="general" data-i18n="cta.whatsapp">Talk on WhatsApp</a>
+        <a class="button primary" href="#pricing" data-i18n="cta.buy">Buy Now</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section-pad relative mx-auto grid min-h-screen max-w-[1180px] grid-cols-1 items-center gap-10 px-5 pt-36 sm:px-6 lg:grid-cols-[minmax(0,.94fr)_minmax(360px,1.06fr)] lg:gap-16 lg:pt-40">
+        <div class="mesh mesh-one absolute rounded-full blur-3xl" aria-hidden="true"></div>
+        <div class="mesh mesh-two absolute rounded-full blur-3xl" aria-hidden="true"></div>
+        <div class="hero-copy relative z-10" data-reveal>
+          <p class="eyebrow text-xs font-black uppercase tracking-wider text-cyan" data-i18n="hero.eyebrow">Desktop software for high-volume print automation</p>
+          <h1 class="mt-4 max-w-[980px] text-[clamp(3rem,8vw,7.6rem)] font-black leading-none tracking-normal" data-i18n="hero.title">From Excel to production-ready print files in minutes.</h1>
+          <p class="hero-subtitle mt-7 max-w-[760px] text-[clamp(1.05rem,1.8vw,1.35rem)] leading-8 text-slate-200" data-i18n="hero.subtitle">Layers Shift helps designers, studios, schools, agencies, and production teams generate thousands of certificates, ID cards, badges, labels, and packaging variations without repetitive manual editing.</p>
+          <div class="hero-actions mt-8 flex flex-wrap items-center gap-3">
+            <a class="button primary large" href="https://wa.me/201275107815?text=Hello%20Layers%20Shift%2C%20I%20want%20to%20buy%20the%20Studio%20license%20for%202%2C490%20EGP.%20Please%20send%20me%20payment%20and%20activation%20details." target="_blank" rel="noreferrer" data-whatsapp="studio" data-i18n="cta.lifetime">Get Lifetime License</a>
+            <a class="button soft large" href="https://wa.me/201275107815?text=Hello%20Layers%20Shift%2C%20I%20want%20to%20ask%20about%20the%20software." target="_blank" rel="noreferrer" data-whatsapp="general" data-i18n="cta.whatsapp">Talk on WhatsApp</a>
+          </div>
+          <div class="purchase-note mt-7 grid max-w-[560px] gap-1 border-l-2 border-cyan pl-4 text-muted">
+            <span data-i18n="purchase.title">Purchase via WhatsApp</span>
+            <span data-i18n="purchase.note">License key, download link, guide, and activation steps delivered after payment.</span>
+          </div>
+        </div>
+        <div class="hero-visual relative mx-auto w-full max-w-[820px] drop-shadow-2xl lg:max-w-none" data-reveal>
+          <img class="h-auto w-full" src="assets/images/layers-shift-dashboard.svg" alt="Layers Shift desktop application interface showing Excel rows mapped to design layers" width="980" height="690" fetchpriority="high">
+          <div class="float-card card-a rounded-lg border border-white/10 bg-panel/80 p-4 shadow-premium backdrop-blur-xl">
+            <strong>2,400</strong>
+            <span data-i18n="hero.queue">PDF files queued</span>
+          </div>
+          <div class="float-card card-b rounded-lg border border-white/10 bg-panel/80 p-4 shadow-premium backdrop-blur-xl">
+            <strong data-i18n="hero.preview">Live preview</strong>
+            <span data-i18n="hero.bilingual">Arabic and English data</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="video-section section-pad compact mx-auto max-w-[1180px] px-5 py-20 sm:px-6" data-reveal>
+        <div class="section-heading mx-auto mb-11 grid max-w-[820px] gap-4 text-center">
+          <p class="eyebrow" data-i18n="video.eyebrow">Hero video</p>
+          <h2 data-i18n="video.title">Watch a production job move without the usual friction.</h2>
+          <p data-i18n="video.text">A focused demo frame for import, mapping, preview, batch generation, and PDF export.</p>
+        </div>
+        <button class="video-frame relative mx-auto w-full max-w-[980px] overflow-hidden rounded-2xl border border-white/10 bg-panel shadow-premium" type="button" aria-label="Play Layers Shift demo video">
+          <img src="assets/images/demo-frame.svg" alt="" loading="lazy" width="1280" height="720">
+          <span class="play-button" aria-hidden="true"></span>
+        </button>
+      </section>
+
+      <section class="trusted strip mx-auto max-w-[1180px] border-y border-white/10 px-5 py-8 text-center sm:px-6" data-reveal>
+        <span data-i18n="trusted.title">Trusted for production work by</span>
+        <div class="trust-row flex flex-wrap justify-center gap-3" aria-label="Customer categories">
+          <strong data-i18n="trusted.print">Print Shops</strong><strong data-i18n="trusted.schools">Schools</strong><strong data-i18n="trusted.universities">Universities</strong><strong data-i18n="trusted.studios">Studios</strong><strong data-i18n="trusted.government">Government Offices</strong><strong data-i18n="trusted.agencies">Agencies</strong>
+        </div>
+      </section>
+
+      <section class="stats section-pad compact mx-auto grid max-w-[1180px] grid-cols-1 gap-4 px-5 py-20 sm:grid-cols-2 sm:px-6 lg:grid-cols-5" data-reveal>
+        <div class="stat rounded-lg border border-white/10 bg-white/[.05] p-6 text-center shadow-glow"><strong data-counter="1850000">0</strong><span data-i18n="stats.designs">Designs generated</span></div>
+        <div class="stat rounded-lg border border-white/10 bg-white/[.05] p-6 text-center shadow-glow"><strong data-counter="72000">0</strong><span data-i18n="stats.hours">Hours saved</span></div>
+        <div class="stat rounded-lg border border-white/10 bg-white/[.05] p-6 text-center shadow-glow"><strong data-counter="940">0</strong><span data-i18n="stats.customers">Customers</span></div>
+        <div class="stat rounded-lg border border-white/10 bg-white/[.05] p-6 text-center shadow-glow"><strong data-counter="38">0</strong><span data-i18n="stats.countries">Countries</span></div>
+        <div class="stat rounded-lg border border-white/10 bg-white/[.05] p-6 text-center shadow-glow"><strong data-counter="12400">0</strong><span data-i18n="stats.projects">Projects completed</span></div>
+      </section>
+
+      <section class="problem-solution section-pad mx-auto grid max-w-[1180px] grid-cols-1 gap-5 px-5 py-24 sm:px-6 lg:grid-cols-2">
+        <article class="split-panel pain rounded-lg border border-white/10 bg-white/[.05] p-8 shadow-glow" data-reveal>
+          <p class="eyebrow" data-i18n="pain.eyebrow">The manual workflow</p>
+          <h2 data-i18n="pain.title">One name change becomes a whole afternoon.</h2>
+          <p data-i18n="pain.text">Designers lose focus to copy-paste loops, repeated exports, file naming mistakes, missing photos, wrong IDs, and version chaos when production volume rises.</p>
+          <ul class="check-list negative">
+            <li data-i18n="pain.item1">Hundreds of manual edits across certificates, cards, labels, and tags.</li>
+            <li data-i18n="pain.item2">Human errors discovered only after proofing or printing.</li>
+            <li data-i18n="pain.item3">Senior designers trapped in repetitive production work.</li>
+          </ul>
+        </article>
+        <article class="split-panel solution rounded-lg border border-white/10 bg-white/[.05] p-8 shadow-glow" data-reveal>
+          <p class="eyebrow" data-i18n="solution.eyebrow">The Layers Shift workflow</p>
+          <h2 data-i18n="solution.title">Bind the data once. Generate the whole run.</h2>
+          <p data-i18n="solution.text">Import Excel, connect columns to layers, preview any row, and export clean print-ready files with naming, resolution, and output settings under control.</p>
+          <ul class="check-list">
+            <li data-i18n="solution.item1">Smart data binding for names, photos, IDs, codes, and text blocks.</li>
+            <li data-i18n="solution.item2">Batch processing for thousands of variations.</li>
+            <li data-i18n="solution.item3">Desktop reliability for Windows and macOS teams.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="workflow" class="workflow section-pad" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="workflow.eyebrow">Workflow timeline</p>
+          <h2 data-i18n="workflow.title">The print run finally has a straight line.</h2>
+          <p data-i18n="workflow.text">Every step is visible, reversible, and built for production speed.</p>
+        </div>
+        <ol class="timeline">
+          <li><span>01</span><strong data-i18n="workflow.step1.title">Excel</strong><p data-i18n="workflow.step1.text">Start with customer, student, employee, event, or product data.</p></li>
+          <li><span>02</span><strong data-i18n="workflow.step2.title">Import</strong><p data-i18n="workflow.step2.text">Load structured rows and media paths into a desktop project.</p></li>
+          <li><span>03</span><strong data-i18n="workflow.step3.title">Map Layers</strong><p data-i18n="workflow.step3.text">Connect columns to design layers with clear binding controls.</p></li>
+          <li><span>04</span><strong data-i18n="workflow.step4.title">Preview</strong><p data-i18n="workflow.step4.text">Inspect any record before production begins.</p></li>
+          <li><span>05</span><strong data-i18n="workflow.step5.title">Generate</strong><p data-i18n="workflow.step5.text">Create thousands of precise design variations.</p></li>
+          <li><span>06</span><strong data-i18n="workflow.step6.title">Export</strong><p data-i18n="workflow.step6.text">Deliver high-resolution PDF files ready for print.</p></li>
+        </ol>
+      </section>
+
+      <section id="features" class="features section-pad">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow" data-i18n="features.eyebrow">Interactive features</p>
+          <h2 data-i18n="features.title">Built for designers who ship real production jobs.</h2>
+          <p data-i18n="features.text">Not a script, not a plugin, not a subscription. A focused desktop application for variable print work.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card" data-reveal><span>XL</span><h3 data-i18n="features.excel.title">Excel Import</h3><p data-i18n="features.excel.text">Bring production data into a clean project workspace with predictable structure.</p></article>
+          <article class="feature-card" data-reveal><span>↔</span><h3 data-i18n="features.binding.title">Smart Data Binding</h3><p data-i18n="features.binding.text">Map names, numbers, photos, QR-style codes, and long text to the right layer.</p></article>
+          <article class="feature-card" data-reveal><span>◎</span><h3 data-i18n="features.preview.title">Live Preview</h3><p data-i18n="features.preview.text">Move through records instantly before committing a batch export.</p></article>
+          <article class="feature-card" data-reveal><span>PDF</span><h3 data-i18n="features.pdf.title">PDF Export</h3><p data-i18n="features.pdf.text">Output print-ready files with high-resolution settings for professional finishing.</p></article>
+          <article class="feature-card" data-reveal><span>ع</span><h3 data-i18n="features.language.title">Arabic and English</h3><p data-i18n="features.language.text">Handle bilingual production work with dark and light interface modes.</p></article>
+          <article class="feature-card" data-reveal><span>⌘</span><h3 data-i18n="features.platform.title">Windows and macOS</h3><p data-i18n="features.platform.text">Give mixed production teams the same reliable desktop workflow.</p></article>
+        </div>
+      </section>
+
+      <section class="bento section-pad compact" data-reveal>
+        <article class="bento-card wide">
+          <h2 data-i18n="bento.title">Template library, freeform composer, project save/open.</h2>
+          <p data-i18n="bento.text">Keep repeat jobs organized, reopen client work, and compose print layouts without rebuilding the same production setup every time.</p>
+        </article>
+        <article class="bento-card"><strong data-i18n="bento.dark.title">Dark Mode</strong><span data-i18n="bento.dark.text">For long studio sessions.</span></article>
+        <article class="bento-card"><strong data-i18n="bento.light.title">Light Mode</strong><span data-i18n="bento.light.text">For proofing and office review.</span></article>
+        <article class="bento-card tall"><img src="assets/images/certificate-stack.svg" alt="Stack of generated certificate files" loading="lazy" width="520" height="620"></article>
+      </section>
+
+      <section class="screens section-pad">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow" data-i18n="screens.eyebrow">Software screenshots</p>
+          <h2 data-i18n="screens.title">A serious desktop workspace for serious production volume.</h2>
+        </div>
+        <div class="screen-grid">
+          <img src="assets/images/mac-window.svg" alt="macOS style Layers Shift window mockup" loading="lazy" width="900" height="620" data-reveal>
+          <img src="assets/images/windows-window.svg" alt="Windows style Layers Shift window mockup" loading="lazy" width="900" height="620" data-reveal>
+        </div>
+      </section>
+
+      <section class="comparison section-pad compact" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="compare.eyebrow">Before vs after</p>
+          <h2 data-i18n="compare.title">The difference is not small. It is the production model.</h2>
+        </div>
+        <div class="compare-grid">
+          <article>
+            <span data-i18n="compare.manual.label">Manual Workflow</span>
+            <h3 data-i18n="compare.manual.title">Open, edit, export, rename, repeat.</h3>
+            <p data-i18n="compare.manual.text">Slow jobs, tired eyes, inconsistent files, and errors that become expensive at print time.</p>
+          </article>
+          <article>
+            <span data-i18n="compare.shift.label">Layers Shift</span>
+            <h3 data-i18n="compare.shift.title">Import, map, preview, generate, print.</h3>
+            <p data-i18n="compare.shift.text">One controlled workflow that keeps designers focused on quality and production teams moving.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="value-section section-pad compact" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="value.eyebrow">Production value</p>
+          <h2 data-i18n="value.title">One Large Project Can Pay for Layers Shift</h2>
+        </div>
+        <div class="value-grid">
+          <article>
+            <span data-i18n="value.manual.label">Manual Editing</span>
+            <h3 data-i18n="value.manual.time">8+ Hours</h3>
+            <ul class="check-list negative">
+              <li data-i18n="value.manual.item1">Hundreds of repetitive edits</li>
+              <li data-i18n="value.manual.item2">Higher chance of mistakes</li>
+            </ul>
+          </article>
+          <article>
+            <span data-i18n="value.shift.label">Layers Shift</span>
+            <h3 data-i18n="value.shift.time">Minutes</h3>
+            <ul class="check-list">
+              <li data-i18n="value.shift.item1">Excel Automation</li>
+              <li data-i18n="value.shift.item2">Consistent Results</li>
+              <li data-i18n="value.shift.item3">Ready for Printing</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="pricing" class="pricing section-pad">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow" data-i18n="pricing.eyebrow">Pricing</p>
+          <h2 data-i18n="pricing.title">Choose the license that fits your production floor.</h2>
+          <p data-i18n="pricing.text">Customers purchase through WhatsApp. After payment, you receive a license key, download link, installation guide, and activation instructions.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card" data-reveal>
+            <span data-i18n="pricing.single.label">Single Device</span><h3 data-i18n="pricing.single.price">990 EGP</h3><p data-i18n="pricing.single.text">Perfect for freelancers and individual designers.</p><a class="button soft" href="https://wa.me/201275107815?text=Hello%20Layers%20Shift%2C%20I%20want%20to%20buy%20the%20Single%20Device%20license%20for%20990%20EGP.%20Please%20send%20me%20payment%20and%20activation%20details." target="_blank" rel="noreferrer" data-whatsapp="single" data-i18n="pricing.buy">Buy Now</a>
+          </article>
+          <article class="price-card featured" data-reveal>
+            <span data-i18n="pricing.studio.label">Studio</span><strong class="plan-badge" data-i18n="pricing.studio.badge">Most Popular</strong><h3 data-i18n="pricing.studio.price">2490 EGP</h3><p data-i18n="pricing.studio.text">Built for professional print studios and agencies.</p><a class="button primary" href="https://wa.me/201275107815?text=Hello%20Layers%20Shift%2C%20I%20want%20to%20buy%20the%20Studio%20license%20for%202490%20EGP.%20Please%20send%20me%20payment%20and%20activation%20details." target="_blank" rel="noreferrer" data-whatsapp="studio" data-i18n="cta.lifetime">Get Lifetime License</a>
+          </article>
+          <article class="price-card" data-reveal>
+            <span data-i18n="pricing.team.label">Team</span><h3 data-i18n="pricing.team.price">3990 EGP</h3><p data-i18n="pricing.team.text">Designed for organizations with collaborative production.</p><a class="button soft" href="https://wa.me/201275107815?text=Hello%20Layers%20Shift%2C%20I%20want%20the%20Team%20license%20for%203990%20EGP.%20Please%20send%20me%20the%20details." target="_blank" rel="noreferrer" data-whatsapp="team" data-i18n="pricing.contact">Contact Sales</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="faq" class="faq section-pad compact" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="faq.eyebrow">FAQ</p>
+          <h2 data-i18n="faq.title">Clear answers before you buy.</h2>
+        </div>
+        <div class="faq-list">
+          <details><summary data-i18n="faq.q1">Is Layers Shift a Photoshop script or plugin?</summary><p data-i18n="faq.a1">No. Layers Shift is a professional desktop application for high-volume variable data print automation.</p></details>
+          <details><summary data-i18n="faq.q2">How do customers purchase?</summary><p data-i18n="faq.a2">Purchases are handled through WhatsApp. After payment, you receive the license key, download link, installation guide, and activation instructions.</p></details>
+          <details><summary data-i18n="faq.q3">Does it support Arabic and English?</summary><p data-i18n="faq.a3">Yes. Layers Shift is designed for bilingual production workflows, including Arabic and English projects.</p></details>
+          <details><summary data-i18n="faq.q4">Can it export print-ready PDF files?</summary><p data-i18n="faq.a4">Yes. The export workflow is built for high-resolution print-ready output.</p></details>
+          <details><summary data-i18n="faq.q5">Is it subscription software?</summary><p data-i18n="faq.a5">No. Layers Shift is positioned around lifetime licensing, with update terms clarified during purchase.</p></details>
+        </div>
+      </section>
+
+      <section id="contact" class="final-cta section-pad" data-reveal>
+        <h2 data-i18n="final.title">Ready to automate your production?</h2>
+        <p data-i18n="final.text">Stop spending skilled design hours on repeated edits. Move your next Excel list through Layers Shift and deliver the whole print run with confidence.</p>
+        <div class="hero-actions">
+          <a class="button primary large" href="https://wa.me/201275107815?text=Hello%20Layers%20Shift%2C%20I%20want%20to%20buy%20the%20Studio%20license%20for%202%2C490%20EGP.%20Please%20send%20me%20payment%20and%20activation%20details." target="_blank" rel="noreferrer" data-whatsapp="studio" data-i18n="cta.lifetime">Get Lifetime License</a>
+          <a class="button soft large" href="https://wa.me/201275107815?text=Hello%20Layers%20Shift%2C%20I%20want%20to%20ask%20about%20the%20software." target="_blank" rel="noreferrer" data-whatsapp="general" data-i18n="cta.whatsapp">Talk on WhatsApp</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#top"><span class="brand-mark">LS</span><span>Layers Shift</span></a>
+      <nav aria-label="Footer navigation">
+        <a href="#features" data-i18n="footer.company">Company</a>
+        <a href="#contact" data-i18n="footer.social">Social</a>
+        <a href="https://wa.me/201275107815?text=Hello%20Layers%20Shift%2C%20I%20want%20to%20ask%20about%20the%20software." target="_blank" rel="noreferrer" data-whatsapp="general" data-i18n="footer.whatsapp">WhatsApp</a>
+        <a href="#workflow" data-i18n="footer.docs">Documentation</a>
+        <a href="#contact" data-i18n="footer.privacy">Privacy</a>
+        <a href="#pricing" data-i18n="footer.license">License</a>
+      </nav>
+      <p data-i18n="footer.copy">© 2026 Layers Shift. Professional Variable Data Printing Software.</p>
+    </footer>
+
+    <script src="scripts/cursor.js" defer></script>
+    <script src="scripts/counter.js" defer></script>
+    <script src="scripts/faq.js" defer></script>
+    <script src="scripts/animations.js" defer></script>
+    <script src="scripts/i18n.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+  </body>
+</html>
