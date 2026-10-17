@@ -15,7 +15,9 @@
 (function () {
   "use strict";
 
-  var RELEASES_URL = "./releases.json";
+  // releases.json lives in the releases repo (kept up to date by its GitHub Action).
+  // raw.githubusercontent.com allows cross-origin reads, so this works from any site.
+  var RELEASES_URL = "https://raw.githubusercontent.com/AbdullahAlkzaz/layers-shift/main/releases.json";
   var LATEST_BASE = "https://github.com/AbdullahAlkzaz/layers-shift/releases/latest/download/";
   var WA_BASE = "https://wa.me/201275107815?text=";
 
